@@ -40,7 +40,7 @@
 
 
 
-.api-content {
+.single_API_content_section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,7 +54,7 @@
   box-shadow: 0 0 1vw 1vw rgba(0,0,0,0.25);
 }
 
-.action-btn {
+.call_API_button {
     border: none;
     border-radius: 1vh;
     background-color: rgba(52, 52, 52, 1.0);
@@ -66,26 +66,24 @@
     font-size: 1.8vw;
     margin: 1vh 1vw;
 }
-.action-btn:hover {
+.call_API_button:hover {
   background-color: rgba(62, 62, 62, 1.0);
   box-shadow: 0 0 0.25vh 0.25vh rgba(90, 90, 90, 0.15);
 }
-.action-btn:active {
+.call_API_button:active {
   opacity: 0.75;
   box-shadow: 0 0 0.4vh 0.4vh rgba(0, 0, 0, 0.6 0);
 }
 
 .loader {
-    margin: 20px;
+    margin: 3vh;
     color: rgba(167, 167, 167, 1.0);
     font-style: italic;
 }
 
 .fact-text {
     font-size: 1.5vw;
-
-    margin-top: 20px;
-    color: rgba(222, 222, 222, 1.0);
+    margin-top: 3vh;
 }
 
 .result-box {
@@ -95,4 +93,19 @@
   border-radius: 0.5vh;
   margin-top: 2vh;
   box-shadow: 0 0 0.2vw 0.2vw rgba(0, 0, 0, 0.70);
+}
+
+.database_configs_vertical_flexbox {
+  display: flex;
+  flex-direction: column;
+}
+
+.database_buttons_horizontal_flexbox {
+  display: flex;
+  column-gap: 1vw;
+}
+
+
+.VISUALLY-HIDDEN {
+  display: none;
 }

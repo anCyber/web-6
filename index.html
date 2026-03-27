@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
       <meta charset="UTF-8">
-      <title>Web-Lab 6</title>
-      <!-- Пути к твоим файлам -->
+      <title> Web-Lab 6 </title>
+
       <link rel="stylesheet" href="resources/css_styles/general.css">
-      <link rel="stylesheet" href="resources/css_styles/navigation.css">
+      <link rel="stylesheet" href="resources/css_styles/other.css">
       
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,63 +42,63 @@
       </nav>
 
       <main>
-        <section id="cats-section" class="api-content">
-          <h2 class="section-title"> Get A Random Cat Image </h2>
-          <button class="action-btn" onclick="getCatImageThroughAPI()">
+        <section id="cats-section" class="single_API_content_section">
+          <h2> Get A Random Cat Image </h2>
+          <button class="call_API_button" onclick="getCatImageThroughAPI()">
             Get Image
           </button>
 
-          <div id="cat-loader" class="loader hidden">
+          <div id="cat-loader" class="loader VISUALLY-HIDDEN">
             Loading...
           </div>
           <div id="cat-result"> </div>
         </section>
 
 
-        <section id="dogs-section" class="api-content hidden">
+        <section id="dogs-section" class="single_API_content_section VISUALLY-HIDDEN">
           <h2> A Random Fact About Dogs </h2>
-          <button class="action-btn" onclick="getDogFactThroughAPI()">
+          <button class="call_API_button" onclick="getDogFactThroughAPI()">
             Get Fact
           </button>
 
-          <div id="dog-loader" class="loader hidden">
+          <div id="dog-loader" class="loader VISUALLY-HIDDEN">
             Loading...
           </div>
           <p id="dog-fact-text" class="fact-text"> </p>
         </section>
 
-        <section id="admin-section" class="api-content hidden">
+        <section id="admin-section" class="single_API_content_section VISUALLY-HIDDEN">
           <h2> Configure DataBase </h2>
 
-            <div class="admin-controls">
-              <input type="text" id="post-title" placeholder="New Title">
-              <div class="btn-group">
-                <button class="action-btn post-btn" onclick="sendDataThroughAPI('POST')">
+            <div class="database_configs_vertical_flexbox">
+              <input type="text" id="post-title" placeholder="Enter the Title">
+              <div class="database_buttons_horizontal_flexbox">
+                <button class="call_API_button" onclick="sendDataThroughAPI('POST')">
                   Create
                 </button>
 
-                <button class="action-btn patch-btn" onclick="sendDataThroughAPI('PATCH')">
+                <button class="call_API_button" onclick="sendDataThroughAPI('PATCH')">
                   Edit
                 </button>
 
-                <button class="action-btn delete-btn" onclick="sendDataThroughAPI('DELETE')">
+                <button class="call_API_button" onclick="sendDataThroughAPI('DELETE')">
                   Delete
                 </button>
               </div>
             </div>
 
-            <div id="admin-loader" class="loader hidden"> Loading... </div>
+            <div id="admin-loader" class="loader VISUALLY-HIDDEN"> Loading... </div>
             <div class="result-box">
               <pre id="admin-result"> OUTPUT </pre>
             </div>
         </section>
 
-        <section id="weather-section" class="api-content hidden">
+        <section id="weather-section" class="single_API_content_section VISUALLY-HIDDEN">
             <h2> Weather in Moscow </h2>
-            <button class="action-btn" onclick="getWeatherThroughAPI()">
+            <button class="call_API_button" onclick="getWeatherThroughAPI()">
               Check Weather
             </button>
-            <div id="weather-loader" class="loader hidden"> Loading... </div>
+            <div id="weather-loader" class="loader VISUALLY-HIDDEN"> Loading... </div>
             <div id="weather-result" class="fact-text"> </div>
         </section>
       </main>

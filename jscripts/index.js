@@ -1,9 +1,11 @@
 const CAT_API_LINK = "https://api.thecatapi.com/v1/images/search";
 const DOG_API_LINK = "https://dogapi.dog/api/v2/facts";
-const WEATHER_API_LINK = "https://api.open-meteo.com/v1/forecast?latitude=55.75&longitude=37.61&current_weather=true"
+const WEATHER_API_LINK = "https://api.open-meteo.com/v1/forecast?latitude=55.75&longitude=37.61&current_weather=true";
+const DATABASE_URL = "https://jsonplaceholder.typicode.com/posts";
 
 function showSection(sectionId) {
-    var sections = document.querySelectorAll(".api-content");
+    var sections = document.querySelectorAll(".single_API_content_section");
+
     sections.forEach(function(s) {
         s.classList.add("VISUALLY-HIDDEN");
     });
@@ -28,9 +30,11 @@ async function getCatImageThroughAPI() {
         var response = await fetch(CAT_API_LINK);
         var imageData = await response.json();
         result.innerHTML = (`<img src="${imageData[0].url}">`);
-    } catch (e) {
+    }
+    catch (e) {
         result.innerHTML = "An error occured. :(";
-    } finally {
+    }
+    finally {
         loader.classList.add("VISUALLY-HIDDEN");
     }
 }
@@ -43,10 +47,12 @@ async function getDogFactThroughAPI() {
     try {
         var response = await fetch(DOG_API_LINK);
         var factData = await response.json();
-        text.innerText = factData.data[0].attributes.body;
-    } catch (e) {
-        text.innerText = "An error occured. :(";
-    } finally {
+        result.innerText = factData.data[0].attributes.body;
+    }
+    catch (e) {
+        result.innerText = "An error occured. :(";
+    }
+    finally {
         loader.classList.add("VISUALLY-HIDDEN");
     }
 }
@@ -62,9 +68,11 @@ async function getWeatherThroughAPI() {
         var temperature = weatherData.current_weather.temperature;
         var windspeed = weatherData.current_weather.windspeed;
         result.innerText = (`Temperature: ${temperature}°C\nWind Speed: ${windspeed} km/h`);
-    } catch (e) {
+    }
+    catch (e) {
         result.innerText = "An error occured. :(";
-    } finally {
+    }
+    finally {
         loader.classList.add("VISUALLY-HIDDEN");
     }
 }
@@ -76,14 +84,14 @@ async function sendDataThroughAPI(method) {
     
     loader.classList.remove("VISUALLY-HIDDEN");
     
-    var url = 'https://jsonplaceholder.typicode.com/posts';
+    var url = DATABASE_URL;
     var options = { 
         method: method, 
         headers: { 'Content-type': 'application/json; charset=UTF-8' } 
     };
 
     if ((method == "PATCH") || (method == "DELETE")) {
-        url = url + '/1';
+        url = url + "/1";
     }
 
     if ((method == "POST") || (method == "PATCH")) {
@@ -103,9 +111,11 @@ async function sendDataThroughAPI(method) {
         } else {
             result.innerText = (`STATUS: ${response.status}\n${JSON.stringify(data, null, 2)}`);
         }
-    } catch (e) {
+    }
+    catch (e) {
         result.innerText = "An error occured. :(";
-    } finally {
+    }
+    finally {
         loader.classList.add("VISUALLY-HIDDEN");
     }
 }

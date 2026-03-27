@@ -3,7 +3,6 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   background-color: rgba(31, 31, 31, 1.0);
-  height: 3000px;
   font-family: "Bitcount Single Ink";
 }
 ::-webkit-scrollbar {
@@ -62,7 +61,7 @@ img {
 
   object-fit: cover;
   object-position: center;
-  max-height: 50vh;
+  max-height: 40vh;
 
   border: none;
   border-radius: 1.5vh;
@@ -90,8 +89,4 @@ pre {
     color: rgb(102, 102, 102);
     white-space: pre-wrap;
     word-wrap: break-word;
-}
-
-.VISUALLY-HIDDEN {
-  display: none;
 }
